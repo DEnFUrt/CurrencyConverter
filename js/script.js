@@ -56,7 +56,7 @@ inputUsd.addEventListener('input', getCurrentUsdToRub);
     
     request.addEventListener('readystatechange', function() {
         if (request.readyState === 4 && request.status == 200) {
-            let data = JSON.parse(c);
+            let data = JSON.parse(request.response);
 
             inputUsd.value = inputRub.value / data.usd;
         } else {
